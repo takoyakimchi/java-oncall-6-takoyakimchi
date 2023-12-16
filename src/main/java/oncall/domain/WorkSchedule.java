@@ -8,4 +8,12 @@ public class WorkSchedule {
         this.date = date;
         this.name = name;
     }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public String getName() {
+        return name;
+    }
 }
