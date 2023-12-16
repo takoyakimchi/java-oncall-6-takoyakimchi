@@ -36,4 +36,18 @@ public class Date {
     public DayOfWeek getDayOfWeek() {
         return dayOfWeek;
     }
+
+    public boolean isHoliday() {
+        // 주말
+        if (this.dayOfWeek == DayOfWeek.SAT || this.dayOfWeek == DayOfWeek.SUN) {
+            return true;
+        }
+        // 법정공휴일
+        for (Holiday holiday : Holiday.values()) {
+            if ((holiday.getMonth() == this.month) && (holiday.getDate() == this.date)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
