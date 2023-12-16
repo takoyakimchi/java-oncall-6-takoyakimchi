@@ -18,11 +18,11 @@ public class Service {
 
         for (int i = 1; i <= lastDateOfMonth(month); i++) {
             Date date = new Date(month, i, firstDay);
-            if (date.isHoliday()) {
+            if (date.isHoliday() || date.isWeekend()) {
                 workSchedules.add(new WorkSchedule(date, holidayWorkers.get(holidayIdx)));
                 holidayIdx = nextIdx(holidayIdx, workerCount);
             }
-            if (!date.isHoliday()) {
+            if (!date.isHoliday() && !date.isWeekend()) {
                 workSchedules.add(new WorkSchedule(date, weekdayWorkers.get(weekdayIdx)));
                 weekdayIdx = nextIdx(weekdayIdx, workerCount);
             }
