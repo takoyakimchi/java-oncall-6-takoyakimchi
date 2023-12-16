@@ -33,7 +33,7 @@ public class Service {
 
     private static int nextIdx(int idx, int count) {
         int result = idx + 1;
-        if (idx == count) {
+        if (result == count) {
             result = 0;
         }
         return result;
