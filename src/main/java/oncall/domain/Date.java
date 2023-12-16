@@ -24,4 +24,16 @@ public class Date {
         }
         return result;
     }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public int getDate() {
+        return date;
+    }
+
+    public DayOfWeek getDayOfWeek() {
+        return dayOfWeek;
+    }
 }
