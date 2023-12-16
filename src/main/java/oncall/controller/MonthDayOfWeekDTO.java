@@ -1,21 +1,27 @@
 package oncall.controller;
 
+import oncall.domain.DayOfWeek;
+
 public class MonthDayOfWeekDTO {
 
     private int month;
-    private String dayOfWeek;
+    private DayOfWeek dayOfWeek;
 
     public MonthDayOfWeekDTO(String input) {
         String[] inputs = input.split(",");
         this.month = Integer.parseInt(inputs[0]);
-        this.dayOfWeek = inputs[1];
+        for (DayOfWeek dayOfWeek : DayOfWeek.values()) {
+            if (dayOfWeek.getName().equals(inputs[1])) {
+                this.dayOfWeek = dayOfWeek;
+            }
+        }
     }
 
     public int getMonth() {
         return month;
     }
 
-    public String getDayOfWeek() {
+    public DayOfWeek getDayOfWeek() {
         return dayOfWeek;
     }
 }
