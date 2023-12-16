@@ -12,13 +12,15 @@ public class InputView {
         return new MonthDayOfWeekDTO(input);
     }
 
-    public static void inputWeekdayWorkers() {
+    public static List<String> inputWeekdayWorkers() {
         String input = Console.readLine();
         InputValidator.validateWeekdayWorkers(input);
+        return InputBuilder.buildWorkerList(input);
     }
 
-    public static void inputHolidayWorkers(List<String> weekdayWorkers) {
+    public static List<String> inputHolidayWorkers(List<String> weekdayWorkers) {
         String input = Console.readLine();
         InputValidator.validateHolidayWorkers(weekdayWorkers, input);
+        return InputBuilder.buildWorkerList(input);
     }
 }
