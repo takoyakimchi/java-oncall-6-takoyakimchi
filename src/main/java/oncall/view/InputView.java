@@ -2,12 +2,14 @@ package oncall.view;
 
 import camp.nextstep.edu.missionutils.Console;
 import java.util.List;
+import oncall.controller.MonthDayOfWeekDTO;
 
 public class InputView {
 
-    public static void inputMonthDayOfWeek() {
+    public static MonthDayOfWeekDTO inputMonthDayOfWeek() {
         String input = Console.readLine();
         InputValidator.validateMonthDayOfWeek(input);
+        return new MonthDayOfWeekDTO(input);
     }
 
     public static void inputWeekdayWorkers() {
