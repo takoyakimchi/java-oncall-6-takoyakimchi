@@ -1,8 +1,8 @@
 package oncall.domain;
 
 public class WorkSchedule {
-    private Date date;
-    private String name;
+    private final Date date;
+    private final String name;
 
     public WorkSchedule(Date date, String name) {
         this.date = date;

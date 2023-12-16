@@ -2,8 +2,8 @@ package oncall.service;
 
 public class IdxNameDTO {
 
-    private int idx;
-    private String name;
+    private final int idx;
+    private final String name;
 
     public IdxNameDTO(int idx, String name) {
         this.idx = idx;

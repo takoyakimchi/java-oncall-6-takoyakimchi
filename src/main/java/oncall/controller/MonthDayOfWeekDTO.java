@@ -4,7 +4,7 @@ import oncall.domain.DayOfWeek;
 
 public class MonthDayOfWeekDTO {
 
-    private int month;
+    private final int month;
     private DayOfWeek dayOfWeek;
 
     public MonthDayOfWeekDTO(String input) {

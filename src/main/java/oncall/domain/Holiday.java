@@ -11,19 +11,19 @@ public enum Holiday {
     HANGUL_DAY(10, 9),
     CHRISTMAS(12, 25);
 
+    private final int month;
+    private final int date;
+
+    Holiday(int month, int date) {
+        this.month = month;
+        this.date = date;
+    }
+
     public int getMonth() {
         return month;
     }
 
     public int getDate() {
         return date;
-    }
-
-    private int month;
-    private int date;
-
-    Holiday(int month, int date) {
-        this.month = month;
-        this.date = date;
     }
 }

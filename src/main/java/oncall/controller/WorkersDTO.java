@@ -4,8 +4,8 @@ import java.util.List;
 
 public class WorkersDTO {
 
-    private List<String> weekdayWorkers;
-    private List<String> holidayWorkers;
+    private final List<String> weekdayWorkers;
+    private final List<String> holidayWorkers;
 
     public WorkersDTO(List<String> weekdayWorkers, List<String> holidayWorkers) {
         this.weekdayWorkers = weekdayWorkers;
