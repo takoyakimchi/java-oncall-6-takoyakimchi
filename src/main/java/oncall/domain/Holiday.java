@@ -11,6 +11,14 @@ public enum Holiday {
     HANGUL_DAY(10, 9),
     CHRISTMAS(12, 25);
 
+    public int getMonth() {
+        return month;
+    }
+
+    public int getDate() {
+        return date;
+    }
+
     private int month;
     private int date;
 
