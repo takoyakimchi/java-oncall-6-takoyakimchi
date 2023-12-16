@@ -2,8 +2,8 @@ package oncall.controller;
 
 public class MonthDayOfWeekDTO {
 
-    int month;
-    String dayOfWeek;
+    private int month;
+    private String dayOfWeek;
 
     public MonthDayOfWeekDTO(String input) {
         String[] inputs = input.split(",");
