@@ -1,7 +1,6 @@
 package oncall.view;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -27,7 +26,8 @@ public class InputValidator {
 
     public static void validateHolidayWorkers(List<String> weekdayWorkers, String input) {
         String[] inputs = input.split("\\s*,\\s*");
-        List<String> holidayWorkers = Arrays.asList(inputs);
+        validateNameRule(inputs);
+        List<String> holidayWorkers = List.of(inputs);
 
         Set<String> weekdaySet = new HashSet<>(weekdayWorkers);
         Set<String> holidaySet = new HashSet<>(holidayWorkers);
