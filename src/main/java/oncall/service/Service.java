@@ -11,26 +11,23 @@ public class Service {
     public static List<WorkSchedule> assignWorkSchedule(int month, DayOfWeek firstDay,
         List<String> weekdayWorkers, List<String> holidayWorkers) {
 
-        List<WorkSchedule> workSchedules = new ArrayList<>();
-        int weekdayIdx = 0;
-        int holidayIdx = 0;
+        List<WorkSchedule> scheds = new ArrayList<>();
+        int weekdayIdx = 0, holidayIdx = 0;
         String tempName = "";
         for (int i = 1; i <= lastDateOfMonth(month); i++) {
             Date date = new Date(month, i, firstDay);
             if (date.isHoliday() || date.isWeekend()) { // 휴일
-                IdxNameDTO dto =
-                    addToList(tempName, i, holidayIdx, holidayWorkers, workSchedules, date);
+                IdxNameDTO dto = addToList(tempName, i, holidayIdx, holidayWorkers, scheds, date);
                 holidayIdx = dto.getIdx();
                 tempName = dto.getName();
             }
             if (!date.isHoliday() && !date.isWeekend()) { // 평일
-                IdxNameDTO dto =
-                    addToList(tempName, i, weekdayIdx, weekdayWorkers, workSchedules, date);
+                IdxNameDTO dto = addToList(tempName, i, weekdayIdx, weekdayWorkers, scheds, date);
                 weekdayIdx = dto.getIdx();
                 tempName = dto.getName();
             }
         }
-        return workSchedules;
+        return scheds;
     }
 
     private static IdxNameDTO addToList(String tempName, int i, int idx,
