@@ -2,13 +2,13 @@ package oncall.domain;
 
 public enum DayOfWeek {
 
-    MON("월", 1),
-    TUE("화", 2),
-    WED("수", 3),
-    THU("목", 4),
-    FRI("금", 5),
-    SAT("토", 6),
-    SUN("일", 7);
+    MON("월", 0),
+    TUE("화", 1),
+    WED("수", 2),
+    THU("목", 3),
+    FRI("금", 4),
+    SAT("토", 5),
+    SUN("일", 6);
 
     private String name;
     private int idx;
